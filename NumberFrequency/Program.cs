@@ -18,8 +18,6 @@ namespace NumberFrequency
             myNumberFrequency.NumberSet(Console.ReadLine());
             Console.ReadLine();
         }
-
-        
     }
 
     public class NumberFrequency
@@ -33,7 +31,25 @@ namespace NumberFrequency
             {
                 list.Add(item);
             }
+            List<double> listNum = new List<double>();
+            foreach (var item in list)
+            {
+                var n = char.GetNumericValue(item);
+                listNum.Add(n);
+            }
 
+
+
+            var listN = from n in listNum
+                        group n by n into g
+                        let count = g.Count()
+                        orderby count descending
+                        select new { Value = g.Key, Count = count };
+
+            foreach (var item in listN)
+            {
+                Console.WriteLine($"Number {item.Value} appears {item.Count} time/s");
+            }
             var listNum = list.Where(x => x > 5);
 
 
