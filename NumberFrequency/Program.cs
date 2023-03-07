@@ -6,28 +6,44 @@ using System.Threading.Tasks;
 
 namespace NumberFrequency
 {
-    internal class Program
+    public class Program
     {
         //Write a program in C# Sharp to display the number and frequency of number from giving array.
         //https://www.w3resource.com/csharp-exercises/linq/index.php
         static void Main(string[] args)
         {
+            NumberFrequency myNumberFrequency = new NumberFrequency();
 
             Console.WriteLine("Please enter at least 10 different integers: ");
-            NumberSet.numbers
-
+            myNumberFrequency.NumberSet(Console.ReadLine());
+            Console.ReadLine();
         }
 
-        public void NumberSet()
-        {
-            int numbers;
-        }
+        
     }
 
     public class NumberFrequency
     {
 
-        public 
+        public void NumberSet(string num)
+        {
+            var number = num.ToCharArray();
+            List<char> list = new List<char>();
+            foreach (var item in number)
+            {
+                list.Add(item);
+            }
+
+            var listNum = list.Where(x => x > 5);
+
+
+            Console.WriteLine("The numbers greater that 5 are: ");
+
+            foreach (var item in listNum)
+            {
+                Console.WriteLine($"{item} ");
+            }
+        }
 
     }
 }
