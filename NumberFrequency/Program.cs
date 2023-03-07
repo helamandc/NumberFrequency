@@ -18,8 +18,6 @@ namespace NumberFrequency
             myNumberFrequency.NumberSet(Console.ReadLine());
             Console.ReadLine();
         }
-
-
     }
 
     public class NumberFrequency
@@ -52,7 +50,15 @@ namespace NumberFrequency
             {
                 Console.WriteLine($"Number {item.Value} appears {item.Count} time/s");
             }
+            var listNum = list.Where(x => x > 5);
 
+
+            Console.WriteLine("The numbers greater that 5 are: ");
+
+            foreach (var item in listNum)
+            {
+                Console.WriteLine($"{item} ");
+            }
         }
 
     }
