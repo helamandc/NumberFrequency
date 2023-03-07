@@ -38,8 +38,6 @@ namespace NumberFrequency
                 listNum.Add(n);
             }
 
-
-
             var listN = from n in listNum
                         group n by n into g
                         let count = g.Count()
@@ -50,18 +48,6 @@ namespace NumberFrequency
             {
                 Console.WriteLine($"Number {item.Value} appears {item.Count} time/s");
             }
-
-            var listNum = list.Where(x => x > 5);
-
-
-            Console.WriteLine("The numbers greater that 5 are: ");
-
-            foreach (var item in listNum)
-            {
-                Console.WriteLine($"{item} ");
-            }
-
         }
-
     }
 }
