@@ -50,6 +50,7 @@ namespace NumberFrequency
             {
                 Console.WriteLine($"Number {item.Value} appears {item.Count} time/s");
             }
+
             var listNum = list.Where(x => x > 5);
 
 
@@ -59,6 +60,7 @@ namespace NumberFrequency
             {
                 Console.WriteLine($"{item} ");
             }
+
         }
 
     }
